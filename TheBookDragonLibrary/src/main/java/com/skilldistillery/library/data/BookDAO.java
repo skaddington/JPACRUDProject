@@ -6,14 +6,16 @@ import com.skilldistillery.library.entities.Book;
 
 public interface BookDAO {
 	
-	Book findById(int bookId);
-	
 	List<Book> findAll();
 	
-	Book create(Book book);
+	Book findById(int bookId);
 	
-	Book update(int bookId, Book book);
+	List<Book> findByKeyword(String keyword);
 	
-	boolean deleteById(int bookId);
+	Book createBook(Book book);
+	
+	Book updateBook(int bookId, Book book);
+	
+	boolean deleteBookById(int bookId);
 
 }
