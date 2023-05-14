@@ -11,48 +11,28 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 	<div class="container-fluid">
-		<h1>Welcome to The Book Dragon Library</h1>
-
-		<form action="getBookById.do" method="GET">
-			<div class="row">
-				<div class="col-sm-8">
-					<label for="id">Search by ID:</label> 
-					<input class="form-control" type="text" name="id" />
-				</div>
-				<input class="col btn btn-primary" type="submit" value="Show Book Details" />
+		<div class="row text-center">
+			<h1>Welcome to The Book Dragon Library</h1>
+		</div>
+		<div class="row">
+			<div class="col align-self-center align-items-center">
+			<img class="readingDragon" 
+				src="https://ae01.alicdn.com/kf/H7697d49b8bdd46e7944ce97da7d0b95bz/1993-Dragon-Reading-in-Library-Lithograph-Wall-Sticker-Silk-Poster-Art-Light-Canvas-Home-Decoration.jpg_Q90.jpg_.webp"
+				alt="dragon reading a book" 
+				height=600
+				width=400>
 			</div>
-		</form>
-		
-		<form action="getBookByKeyword.do" method="GET">
-			<div class="row">
-				<div class="col-sm-8">
-					<label for="keyword">Search by keyword or phrase:</label> 
-					<input class="form-control" type="text" name="keyword" />
-				</div>
-				<input class="col btn btn-primary" type="submit" value="Show Book Details" />
+			<div class="col text-center align-self-center align-items-center">
+				<h2>Rules of the Library:</h2>
+				<h3>Set forth by the BookDragon</h3>
+				<hr>
+				<h3>Respect all books in her domain,</h3>
+				<h3>Repair or Replace what you maim,</h3>
+				<h3>Do not thieve for she will reclaim,</h3>
+				<h3>Or it is you she will enflame.</h3>
 			</div>
-		</form>
-
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Title</th>
-					<th>Author</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="book" items="${books}">
-					<tr>
-						<td>${book.id}</td>
-						<td><a href="getBookById.do?id=${book.id}">${book.title}</a></td>
-						<td>${book.authorFirstName} ${book.authorLastName}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		</div>
 	</div>
-	<jsp:include page="bootstrapFoot.jsp" />
-
+<jsp:include page="bootstrapFoot.jsp" />
 </body>
 </html>

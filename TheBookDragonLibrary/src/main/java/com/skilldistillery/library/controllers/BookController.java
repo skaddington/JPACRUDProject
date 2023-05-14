@@ -21,8 +21,13 @@ public class BookController {
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
-		model.addAttribute("books", bookDao.findAll());
 		return "home";
+	}
+
+	@RequestMapping("allBooks.do")
+	public String allBooks(Model model) {
+		model.addAttribute("books", bookDao.findAll());
+		return "book/allBooks";
 	}
 	
 	@GetMapping("getBookById.do")
@@ -37,12 +42,17 @@ public class BookController {
 		return "book/multipleBooks";
 	}
 	
+	@RequestMapping("newBook.do")
+	public String newBook(Model model) {
+		return "book/newBook";
+	}
+	
 	@PostMapping("addBook.do")
-	public ModelAndView addFilm(Book book, RedirectAttributes redir) {
+	public ModelAndView addBook(Book book, RedirectAttributes redir) {
 		bookDao.createBook(book);
 		redir.addFlashAttribute("book", book);
 		ModelAndView model = new ModelAndView();
-		model.setViewName("redirect:BookAdded.do");
+		model.setViewName("redirect:bookAdded.do");
 		return model;
 	}
 	
@@ -51,8 +61,14 @@ public class BookController {
 		return "book/singleBook";
 	}
 	
+	@RequestMapping("changeBook.do")
+	public String changeBook(Model model, int id) {
+		model.addAttribute("book", bookDao.findById(id));
+		return "book/updateBook";
+	}
+	
 	@PostMapping("updateBook.do")
-	public ModelAndView updateBook(@RequestParam("update") int id, Book book, RedirectAttributes redir) {
+	public ModelAndView updateBook(int id, Book book, RedirectAttributes redir) {
 		bookDao.updateBook(id, book);
 		redir.addFlashAttribute("book", book);
 		ModelAndView model = new ModelAndView();
@@ -66,12 +82,10 @@ public class BookController {
 	}
 	
 	@PostMapping("deleteBook.do")
-	public ModelAndView deleteBook(@RequestParam("delete") int id, Book book, RedirectAttributes redir) {
+	public ModelAndView deleteBook(int id, Book book, RedirectAttributes redir) {
 		ModelAndView model = new ModelAndView();
-		boolean bookReallyDeleted = bookDao.deleteBookById(id);
-		if ( bookReallyDeleted != true) {
-			redir.addFlashAttribute("book", book);
-		}
+		boolean wasBookReallyDeleted = bookDao.deleteBookById(id);
+		redir.addFlashAttribute("wasBookReallyDeleted", wasBookReallyDeleted);
 		model.setViewName("redirect:bookDeleted.do");
 		return model;
 	}

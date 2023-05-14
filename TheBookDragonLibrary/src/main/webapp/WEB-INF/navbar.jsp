@@ -6,10 +6,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="home.do">Home</a>
+      <a class="navbar-brand" href="home.do">Main Room</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="#">TBD</a>
+          <a class="nav-link active" href="allBooks.do">Browse the Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="newBook.do">Tribute Room</a>
         </li>
       </ul>
     </div>

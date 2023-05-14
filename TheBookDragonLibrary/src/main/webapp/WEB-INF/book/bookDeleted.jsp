@@ -5,25 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Book Deleted</title>
+<title>Pilfering</title>
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="../navbar.jsp"/>
-<div class="container">
+<div class="container-fluid">
 	<c:choose>
-		<c:when test="${not empty book}">
-			<h1>Book Details</h1>
-			<div>
-				<h4>${book.title}</h4>
-				<h5>${book.authorFirstName} ${book.authorLastName}</h5>
-				<h5>${book.publishYear}</h5>
-				<blockquote>${book.synopsis}</blockquote>
-			</div>
+		<c:when test="${wasBookReallyDeleted ne true}">
+			<h2>You are a very lucky soul...</h2>
+				<h3>${book.title} was not pilfered successfully.</h3>
 		</c:when>
 		
 		<c:otherwise>
-			<h3>Book Deleted.</h3>
+			<h2>The BookDragon does not take kindly to thieves...</h2>
+			<h6>...you may want to start running.</h6>
 		</c:otherwise>
 	</c:choose>
 </div>

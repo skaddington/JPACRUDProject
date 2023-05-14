@@ -1,6 +1,33 @@
 @charset "UTF-8";
 
-h1{
-	color: maroon;
-	font: fantasy;
+body, html {
+	background-image: url("https://e0.pxfuel.com/wallpapers/116/834/desktop-wallpaper-old-paper-by-scroll-paper.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	padding:30px;
+}
+
+div{
+	padding:15px;
+}
+
+.container-fluid{
+	background-color: rgba(255, 255, 255, 0.5) !important
+}
+
+#bookCover {
+	height: 420px;
+	width: 280px;
+}
+
+h1, h2, h3, h4, h5, h6, input, label, nav {
+	color: black;
+	font-family: Apple Chancery;
+}
+
+blockquote, table, nav {
+	background-color: rgba(255, 255, 255, 0.3)
 }
