@@ -13,7 +13,9 @@
 <div class="container-fluid">
 	<c:choose>
 		<c:when test="${not empty books}">
-			<h1>Books Found from your Query</h1>
+			<div class="row text-center">
+				<h1>Books Found from your Query</h1>
+			</div>
 			<c:forEach var="book" items="${books}">
 			<div class="row">
 				<div class="col-4">
@@ -60,7 +62,9 @@
 		</c:when>
 		
 		<c:otherwise>
-			<h3>The BookDragon does not know of the book you seek.</h3>
+			<div class="row text-center">
+				<h3>The BookDragon does not know of the book you seek.</h3>
+			</div>
 		</c:otherwise>
 	</c:choose>
 </div>

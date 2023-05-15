@@ -13,7 +13,9 @@
 <div class="container-fluid">
 	<c:choose>
 		<c:when test="${not empty book}">
-			<h1>Book Found from your Query</h1>
+			<div class="row text-center">
+				<h1>Book Found from your Query</h1>
+			</div>
 			<div class="row">
 				<div class="col-4">
 					<c:choose>
@@ -56,7 +58,9 @@
 			</div>
 		</c:when>			
 		<c:otherwise>
-			<h3>The BookDragon does not know of the book you seek.</h3>
+			<div class="row text-center">
+				<h3>The BookDragon does not know of the book you seek.</h3>
+			</div>
 		</c:otherwise>
 	</c:choose>
 </div>

@@ -11,8 +11,10 @@
 <body>
 <jsp:include page="../navbar.jsp"/>
 	<div class="container-fluid">
-		<h1>Welcome to the Hall of Changing</h1>
-		<h3>Be wary of your actions or you will answer to the BookDragon herself.</h3>
+		<div class="row text-center">
+			<h1>Welcome to the Hall of Changing</h1>
+			<h3>Be wary of your actions or you will answer to the BookDragon herself.</h3>
+		</div>
 		
 		<form action="updateBook.do" method="POST">
 		    <label for="title">Title: </label>

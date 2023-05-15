@@ -22,7 +22,7 @@
 				height=600
 				width=400>
 			</div>
-			<div class="col text-center align-self-center align-items-center">
+			<div class="col align-self-center align-items-center">
 				<h2>Rules of the Library:</h2>
 				<h3>Set forth by the BookDragon</h3>
 				<hr>

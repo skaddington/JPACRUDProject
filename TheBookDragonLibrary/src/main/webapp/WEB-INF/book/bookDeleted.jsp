@@ -10,19 +10,21 @@
 </head>
 <body>
 <jsp:include page="../navbar.jsp"/>
-<div class="container-fluid">
-	<c:choose>
-		<c:when test="${wasBookReallyDeleted ne true}">
-			<h2>You are a very lucky soul...</h2>
+	<div class="container-fluid">
+		<div class="row text-center align-self-center align-items-center">
+		<c:choose>
+			<c:when test="${wasBookReallyDeleted ne true}">
+				<h2>You are a very lucky soul...</h2>
 				<h3>${book.title} was not pilfered successfully.</h3>
-		</c:when>
-		
-		<c:otherwise>
-			<h2>The BookDragon does not take kindly to thieves...</h2>
-			<h6>...you may want to start running.</h6>
-		</c:otherwise>
-	</c:choose>
-</div>
+			</c:when>
+			
+			<c:otherwise>
+				<h2>The BookDragon does not take kindly to thieves...</h2>
+				<h6>...you may want to start running.</h6>
+			</c:otherwise>
+		</c:choose>
+		</div>
+	</div>
 <jsp:include page="../bootstrapFoot.jsp"></jsp:include>
 </body>
 </html>

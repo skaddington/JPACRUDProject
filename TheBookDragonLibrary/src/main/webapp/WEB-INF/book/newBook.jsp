@@ -10,10 +10,13 @@
 <body>
 <jsp:include page="../navbar.jsp"/>
 	<div class="container-fluid">
-		<h1>Welcome to the Room of Tribute</h1>
-		<h2>The BookDragon looks forward to delving into your addition to her library.</h2>
+		<div class="row text-center">
+			<h1>Welcome to the Room of Tribute</h1>
+			<h2>The BookDragon looks forward to delving into your addition to her library.</h2>
+			<br>	
+			<h3>Enter your book's elements:</h3>
+		</div>
 		
-		<h3>Enter your book's elements:</h3>
 		<form action="addBook.do" method="POST">
 		    <label for="title">Title: </label>
 			<input type="text" name="title" required/> 
